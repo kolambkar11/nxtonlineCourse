@@ -1,13 +1,33 @@
 import { Lock, Play } from "lucide-react";
 import React, { useState } from "react";
 
-const Coursecontentsection = ({ courseInfo }: any) => {
+// Define interfaces for courseInfo structure
+interface IChapter {
+  name: string;
+}
+
+interface ICourseList {
+  chapter: IChapter[];
+}
+
+interface ICourseInfo {
+  courseLists: ICourseList[];
+}
+
+interface CourseContentSectionProps {
+  courseInfo: ICourseInfo;
+}
+
+const Coursecontentsection: React.FC<CourseContentSectionProps> = ({
+  courseInfo,
+}) => {
   const [activeIndex] = useState(0);
+
   return (
     <>
       <div className="p-3 bg-white rounded-sm mt-3">
         <h1>Contents</h1>
-        {courseInfo.courseLists[0].chapter.map((item: any, index: number) => {
+        {courseInfo.courseLists[0].chapter.map((item, index) => {
           return (
             <div key={index}>
               <h2

@@ -6,13 +6,15 @@ import React, { useEffect } from "react";
 const Page = () => {
   const router = useRouter();
   const { user, isLoaded } = useUser();
+
   useEffect(() => {
     if (user) {
       router.push("/dashboard");
-    } else {
-      isLoaded && router.push("/courses");
+    } else if (isLoaded) {
+      router.push("/courses");
     }
-  }, [user]);
+  }, [user, isLoaded]); // Added isLoaded to the dependency array
+
   return (
     <div>
       <UserButton afterSignOutUrl="/sign-in" />

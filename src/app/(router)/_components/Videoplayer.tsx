@@ -1,5 +1,22 @@
 import React from "react";
-const Videoplayer = ({ videoUrl }: any) => {
+
+// Define the interface for videoUrl
+interface IVideoUrl {
+  banner: {
+    url: string;
+  };
+  chapter: {
+    video: {
+      url: string;
+    };
+  }[];
+}
+
+interface VideoplayerProps {
+  videoUrl: IVideoUrl;
+}
+
+const Videoplayer: React.FC<VideoplayerProps> = ({ videoUrl }) => {
   return (
     <div>
       <video
