@@ -1,14 +1,13 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React from "react";
 
 const Courseitem = (props: {
   course: {
-    banner: { url: string | StaticImport };
+    banner: { url: string };
     name: string;
     author: string;
     chapter: string;
-    free: any;
+    free: boolean;
   };
 }) => {
   return (

@@ -6,8 +6,6 @@ const Sidebanners = () => {
   const [sideBannerList, setSideBannerList] = useState<string[]>([]);
   const getSidebanners = () => {
     GlobalApi.getSideBanner().then((resp: any) => {
-      // console.log(resp.sideBanners);
-
       setSideBannerList(resp.sideBanners);
     });
   };

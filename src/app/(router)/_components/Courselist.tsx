@@ -11,9 +11,11 @@ import Courseitem from "./Courseitem";
 import Link from "next/link";
 
 interface ICourse {
+  slug: string;
   length: number;
+  item: string;
   courseList: string[];
-  courseLists: Array<[]>;
+  courseLists: string[];
   setCourseList: Array<[]>;
 }
 
@@ -50,7 +52,7 @@ const Courselist = () => {
       {/* display course list */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         {courseList?.length > 0
-          ? courseList.map((item: any, index: React.Key | null | undefined) => {
+          ? courseList.map((item, index: number) => {
               return (
                 <Link href={`/course-preview/` + item.slug} key={index}>
                   <div>
