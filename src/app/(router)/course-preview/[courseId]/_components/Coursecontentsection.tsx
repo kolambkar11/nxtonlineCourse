@@ -2,8 +2,7 @@ import { Lock, Play } from "lucide-react";
 import React, { useState } from "react";
 
 const Coursecontentsection = ({ courseInfo }: any) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  //   setActiveIndex(0);
+  const [activeIndex] = useState(0);
   return (
     <>
       <div className="p-3 bg-white rounded-sm">

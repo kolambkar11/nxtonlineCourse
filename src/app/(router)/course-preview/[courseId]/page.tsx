@@ -18,12 +18,11 @@ const Coursepreview = (props: any) => {
       };
 
       fetchParams();
-    }, [props.params]);
-    useEffect(() => {
+
       if (courseId) {
         getCourseInforById(courseId);
       }
-    }, [courseId]);
+    }, [props.params, courseId]);
 
     const getCourseInforById = (id: string) => {
       GlobalApi.getCourseByID(id).then((resp) => {

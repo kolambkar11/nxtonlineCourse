@@ -57,7 +57,7 @@ const getSideBanner = async () => {
   return result;
 };
 
-const getCourseByID = async (courseId: any) => {
+const getCourseByID = async (courseId: string) => {
   const query =
     gql` 
 query MyQuery {
