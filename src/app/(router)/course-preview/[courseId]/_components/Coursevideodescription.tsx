@@ -2,8 +2,36 @@ import Videoplayer from "@/app/(router)/_components/Videoplayer";
 import React from "react";
 import Markdown from "react-markdown";
 
-const Coursevideodescription = (props: any) => {
+// Define the interfaces for the expected data structure
+interface IChapter {
+  video: {
+    url: string;
+  };
+}
+
+interface ICourse {
+  name: string;
+  author: string;
+  description: string;
+  banner: {
+    url: string;
+  };
+  chapter: IChapter[];
+}
+
+interface ICourseInfo {
+  courseLists: ICourse[];
+}
+
+interface CourseVideoDescriptionProps {
+  courseInfo: ICourseInfo;
+}
+
+const Coursevideodescription: React.FC<CourseVideoDescriptionProps> = (
+  props
+) => {
   const datas = props.courseInfo.courseLists[0];
+
   return (
     datas && (
       <>
