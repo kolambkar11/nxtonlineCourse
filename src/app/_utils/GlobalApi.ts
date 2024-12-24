@@ -8,7 +8,7 @@ const MASTER_URL: string =
 const getAllCourseList = async () => {
   const query = gql`
     query MyQuery {
-      courseLists(first: 20, orderBy: createdAt_DESC) {
+      courseLists(first: 100, orderBy: createdAt_DESC) {
         author
         name
         id

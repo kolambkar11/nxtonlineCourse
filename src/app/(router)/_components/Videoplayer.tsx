@@ -10,7 +10,7 @@ const Videoplayer = ({ videoUrl }: any) => {
         className="rounded-sm"
         poster={videoUrl.banner.url}
       >
-        <source src={videoUrl} type="video/mp4" />
+        <source src={videoUrl.chapter[0].video.url} type="video/mp4" />
       </video>
     </div>
   );
