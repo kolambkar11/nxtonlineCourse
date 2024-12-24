@@ -13,8 +13,8 @@ import Link from "next/link";
 interface ICourse {
   length: number;
   courseList: string[];
-  courseLists: Array<any>;
-  setCourseList: any;
+  courseLists: Array<[]>;
+  setCourseList: Array<[]>;
 }
 
 const Courselist = () => {

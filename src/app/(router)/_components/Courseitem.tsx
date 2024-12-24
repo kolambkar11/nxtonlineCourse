@@ -1,7 +1,62 @@
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React from "react";
 
-const Courseitem = (props: any) => {
+const Courseitem = (props: {
+  course: {
+    banner: { url: string | StaticImport };
+    name:
+      | string
+      | number
+      | bigint
+      | boolean
+      | React.ReactElement<unknown, string | React.JSXElementConstructor<any>>
+      | Iterable<React.ReactNode>
+      | React.ReactPortal
+      | Promise<
+          | string
+          | number
+          | bigint
+          | boolean
+          | React.ReactPortal
+          | React.ReactElement<
+              unknown,
+              string | React.JSXElementConstructor<any>
+            >
+          | Iterable<React.ReactNode>
+          | null
+          | undefined
+        >
+      | null
+      | undefined;
+    author:
+      | string
+      | number
+      | bigint
+      | boolean
+      | React.ReactElement<unknown, string | React.JSXElementConstructor<any>>
+      | Iterable<React.ReactNode>
+      | React.ReactPortal
+      | Promise<
+          | string
+          | number
+          | bigint
+          | boolean
+          | React.ReactPortal
+          | React.ReactElement<
+              unknown,
+              string | React.JSXElementConstructor<any>
+            >
+          | Iterable<React.ReactNode>
+          | null
+          | undefined
+        >
+      | null
+      | undefined;
+    chapter: string | any[];
+    free: any;
+  };
+}) => {
   return (
     <>
       <div className="border rounded-xl hover:shadow-md transition-all cursor-pointer hover:shadow-purple-300">
