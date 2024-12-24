@@ -3,7 +3,7 @@ import { UserButton, useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   const { user, isLoaded } = useUser();
   useEffect(() => {
@@ -20,4 +20,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
 import "./globals.css";
 import {
   ClerkProvider,
@@ -8,10 +7,6 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
-
-const inter = Outfit({
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
