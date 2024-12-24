@@ -5,20 +5,18 @@ import Coursevideodescription from "./_components/Coursevideodescription";
 import GlobalApi from "@/app/_utils/GlobalApi";
 import Courseenrollment from "./_components/Courseenrollment";
 import Coursecontentsection from "./_components/Coursecontentsection";
-
-// Define interfaces for the props and courseInfo structure
+// Course Params Interface
 interface CourseParams {
   courseId: string;
 }
 
 interface CoursePreviewProps {
-  params: Promise<CourseParams>; // Props is a promise that resolves to parameters
+  params: Promise<CourseParams>;
 }
 
+// Updated IChapter and ICourse interfaces
 interface IChapter {
-  video: {
-    url: string;
-  };
+  name: string; // Assuming name is required and there is no optional `video` property
 }
 
 interface ICourse {
@@ -28,7 +26,7 @@ interface ICourse {
   banner: {
     url: string;
   };
-  chapter: IChapter[];
+  chapter: IChapter[]; // Chapter array should contain IChapter, not with video property
 }
 
 interface ICourseInfo {
@@ -59,9 +57,9 @@ const Coursepreview: React.FC<CoursePreviewProps> = (props) => {
   }, [courseId]);
 
   const getCourseInforById = (id: string) => {
-    GlobalApi.getCourseByID(id).then((resp: ICourseInfo) => {
-      setCourseInfo(resp);
-    });
+    GlobalApi.getCourseByID(id)
+      .then((resp) => setCourseInfo(resp)) // No explicit type assertion needed if GlobalApi.getCourseByID is correctly typed
+      .catch((error) => console.error("Error fetching course info:", error));
   };
 
   // Return loading state if courseInfo is null

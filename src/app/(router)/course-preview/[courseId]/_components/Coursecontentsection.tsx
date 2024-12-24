@@ -32,11 +32,11 @@ const Coursecontentsection: React.FC<CourseContentSectionProps> = ({
             <div key={index}>
               <h2
                 className={`flex justify-between items-center p-2 text-[14px] border rounded-sm px-4 cursor-pointer m-2 hover:bg-gray-200 text-gray-500 ${
-                  activeIndex == index && "bg-primary text-white"
+                  activeIndex === index && "bg-primary text-white"
                 }`}
               >
                 {index + 1}. {item.name}
-                {activeIndex == index ? (
+                {activeIndex === index ? (
                   <Play className="h-4 w-4" />
                 ) : (
                   <Lock className="h-4 w-4" />
