@@ -12,11 +12,19 @@ import Link from "next/link";
 
 interface ICourse {
   slug: string;
-  length: number;
-  item: string;
-  courseList: string[];
-  courseLists: string[];
-  setCourseList: Array<[]>;
+  banner: {
+    url: string;
+  };
+  name: string;
+  author: string;
+  chapter: IChapter[];
+  free: boolean;
+}
+
+interface IChapter {
+  video: {
+    url: string;
+  };
 }
 
 interface IApiResponse {
