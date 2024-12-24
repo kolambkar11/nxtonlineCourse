@@ -17,14 +17,8 @@ interface ICourse {
   };
   name: string;
   author: string;
-  chapter: IChapter[];
+  chapter: { name: string }[]; // Adjusted to include objects with 'name' property
   free: boolean;
-}
-
-interface IChapter {
-  video: {
-    url: string;
-  };
 }
 
 interface IApiResponse {

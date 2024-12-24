@@ -6,7 +6,7 @@ const Courseitem = (props: {
     banner: { url: string };
     name: string;
     author: string;
-    chapter: string;
+    chapter: { name: string }[]; // Updated to array of objects with name property
     free: boolean;
   };
 }) => {
@@ -24,31 +24,29 @@ const Courseitem = (props: {
         <div className="flex flex-col gap-1 p-2">
           <h2 className="font-bold text-[11px]">{props.course.name}</h2>
           <h2 className="text-[10px] text-gray-400">{props.course.author}</h2>
-          {props.course?.chapter?.length === 0 ? (
-            <>
-              <div className="flex gap-2">
-                <Image
-                  src={"/youtube.png"}
-                  alt="YouTube"
-                  width={20}
-                  height={20}
-                  priority
-                />
-                <h2 className="text-[14px] text-gray-400">Watch on YouTube</h2>
-              </div>
-            </>
+          {props.course.chapter.length === 0 ? (
+            <div className="flex gap-2">
+              <Image
+                src={"/youtube.png"}
+                alt="YouTube"
+                width={20}
+                height={20}
+                priority
+              />
+              <h2 className="text-[14px] text-gray-400">Watch on YouTube</h2>
+            </div>
           ) : (
-            <>
-              <div className="flex gap-2">
-                <Image
-                  src={"/chapter.png"}
-                  alt="YouTube"
-                  width={20}
-                  height={20}
-                />
-                <h2 className="text-[14px] text-gray-400">Chapter</h2>
-              </div>
-            </>
+            <div className="flex gap-2">
+              <Image
+                src={"/chapter.png"}
+                alt="Chapter"
+                width={20}
+                height={20}
+              />
+              <h2 className="text-[14px] text-gray-400">
+                {props.course.chapter.length} Chapter(s)
+              </h2>
+            </div>
           )}
           <h2>{props.course?.free ? "Free" : "Paid"}</h2>
         </div>
