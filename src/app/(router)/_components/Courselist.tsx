@@ -19,14 +19,22 @@ interface ICourse {
   setCourseList: Array<[]>;
 }
 
+interface IApiResponse {
+  courseLists: ICourse[];
+}
+
 const Courselist = () => {
   const [courseList, setCourseList] = useState<ICourse[]>([]);
 
   const getAllCourse = () => {
-    GlobalApi.getAllCourseList().then((resp: any) => {
-      const result = resp?.courseLists;
-      setCourseList(result);
-    });
+    GlobalApi.getAllCourseList()
+      .then((resp) => {
+        const result = (resp as IApiResponse).courseLists; // Type assertion
+        setCourseList(result);
+      })
+      .catch((error) => {
+        console.error("Error fetching course list:", error);
+      });
   };
 
   useEffect(() => {
