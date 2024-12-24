@@ -23,7 +23,7 @@ const Courselist = () => {
   const [courseList, setCourseList] = useState<ICourse[]>([]);
 
   const getAllCourse = () => {
-    GlobalApi.getAllCourseList().then((resp) => {
+    GlobalApi.getAllCourseList().then((resp: any) => {
       const result = resp?.courseLists;
       setCourseList(result);
     });
