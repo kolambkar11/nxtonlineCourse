@@ -5,55 +5,9 @@ import React from "react";
 const Courseitem = (props: {
   course: {
     banner: { url: string | StaticImport };
-    name:
-      | string
-      | number
-      | bigint
-      | boolean
-      | React.ReactElement<unknown, string | React.JSXElementConstructor<any>>
-      | Iterable<React.ReactNode>
-      | React.ReactPortal
-      | Promise<
-          | string
-          | number
-          | bigint
-          | boolean
-          | React.ReactPortal
-          | React.ReactElement<
-              unknown,
-              string | React.JSXElementConstructor<any>
-            >
-          | Iterable<React.ReactNode>
-          | null
-          | undefined
-        >
-      | null
-      | undefined;
-    author:
-      | string
-      | number
-      | bigint
-      | boolean
-      | React.ReactElement<unknown, string | React.JSXElementConstructor<any>>
-      | Iterable<React.ReactNode>
-      | React.ReactPortal
-      | Promise<
-          | string
-          | number
-          | bigint
-          | boolean
-          | React.ReactPortal
-          | React.ReactElement<
-              unknown,
-              string | React.JSXElementConstructor<any>
-            >
-          | Iterable<React.ReactNode>
-          | null
-          | undefined
-        >
-      | null
-      | undefined;
-    chapter: string | any[];
+    name: string;
+    author: string;
+    chapter: string;
     free: any;
   };
 }) => {
