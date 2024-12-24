@@ -5,7 +5,7 @@ const Coursecontentsection = ({ courseInfo }: any) => {
   const [activeIndex] = useState(0);
   return (
     <>
-      <div className="p-3 bg-white rounded-sm">
+      <div className="p-3 bg-white rounded-sm mt-3">
         <h1>Contents</h1>
         {courseInfo.courseLists[0].chapter.map((item: any, index: number) => {
           return (

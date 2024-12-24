@@ -1,6 +1,8 @@
 "use client";
+import { useUser } from "@clerk/nextjs";
 import {
   BadgeIcon,
+  BlocksIcon,
   BookOpen,
   GraduationCap,
   LayoutGrid,
@@ -12,36 +14,49 @@ import { usePathname } from "next/navigation";
 import React from "react";
 
 const Sidenav = () => {
+  const { user } = useUser();
   const menu = [
     {
       id: 1,
-      name: "All Courses",
-      icon: BookOpen,
-      path: "/courses",
+      name: "Dashboard",
+      icon: BlocksIcon,
+      path: "/dashboard",
+      auth: user,
     },
     {
       id: 2,
-      name: "Store",
-      icon: LayoutGrid,
-      path: "/store",
+      name: "All Courses",
+      icon: BookOpen,
+      path: "/courses",
+      auth: true,
     },
     {
       id: 3,
-      name: "Membership",
-      icon: BadgeIcon,
-      path: "/membership",
+      name: "Store",
+      icon: LayoutGrid,
+      path: "/store",
+      auth: true,
     },
     {
       id: 4,
-      name: "Be Instructor",
-      icon: GraduationCap,
-      path: "/beInstructor",
+      name: "Membership",
+      icon: BadgeIcon,
+      path: "/membership",
+      auth: true,
     },
     {
       id: 5,
+      name: "Be Instructor",
+      icon: GraduationCap,
+      path: "/beInstructor",
+      auth: true,
+    },
+    {
+      id: 6,
       name: "Newsletter ",
       icon: MailOpenIcon,
       path: "/newsletter",
+      auth: true,
     },
   ];
 
