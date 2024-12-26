@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
+import { useUser } from "@clerk/nextjs";
 import React from "react";
 
 const Courseenrollment = () => {
-  const membership = false;
+  const { user, isLoaded } = useUser();
+  console.log(useUser());
+
+  console.log("isLoaded", user);
   return (
     <>
       <div className="p-3 text-center rounded-sm bg-primary ">
@@ -10,7 +14,7 @@ const Courseenrollment = () => {
           Enroll to the Course
         </h2>
         {/* user logged in and have membership */}
-        {membership ? (
+        {user !== null || undefined ? (
           <div className="flex flex-col gap-3 mt-3">
             <h2 className="text-white font-light">
               Enroll Now to Start Learning and Building the Project
