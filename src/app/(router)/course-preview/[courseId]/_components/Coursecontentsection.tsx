@@ -1,9 +1,12 @@
 import { Lock, Play } from "lucide-react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 // Define interfaces for courseInfo structure
 interface IChapter {
   name: string;
+  video: string;
+  url: string;
 }
 
 interface ICourseList {
@@ -22,12 +25,15 @@ const Coursecontentsection: React.FC<CourseContentSectionProps> = ({
   courseInfo,
 }) => {
   const [activeIndex] = useState(0);
+  const [course, setCourse] = useState("");
 
   return (
     <>
       <div className="p-3 bg-white rounded-sm mt-3">
         <h1>Contents</h1>
         {courseInfo.courseLists[0].chapter.map((item, index) => {
+          console.log(item);
+
           return (
             <div key={index}>
               <h2

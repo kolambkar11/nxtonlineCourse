@@ -71,3 +71,6 @@ body {
     @apply bg-background text-foreground;
   }
 }
+.cl-internal-nfscg9:first-child{
+  display: none;
+}
