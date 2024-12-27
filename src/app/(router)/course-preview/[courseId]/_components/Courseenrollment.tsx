@@ -6,7 +6,6 @@ interface IChapter {
   name: string;
   video: string;
   url: string;
-  id: string;
 }
 
 interface ICourseList {
@@ -14,8 +13,6 @@ interface ICourseList {
 }
 
 interface ICourseInfo {
-  slug: string;
-
   free: boolean;
   courseLists: ICourseList[];
 }
