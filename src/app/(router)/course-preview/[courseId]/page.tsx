@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import GlobalApi from "@/app/_utils/GlobalApi";
 import Courseenrollment from "./_components/Courseenrollment";
 import Coursecontentsection from "./_components/Coursecontentsection";
+import Coursevideodescription from "./_components/Coursevideodescription";
 // Course Params Interface
 interface CourseParams {
   courseId: string;
@@ -93,7 +94,7 @@ const Coursepreview: React.FC<CoursePreviewProps> = (props) => {
     <div className="grid grid-cols-1 md:grid-cols-3 p-5 gap-3">
       {/* title, video, description */}
       <div className="col-span-2 bg-white p-3 rounded-xl">
-        {/* <Coursevideodescription courseInfo={courseInfo} /> */}
+        <Coursevideodescription courseInfo={courseInfo} />
       </div>
       {/* course content */}
       <div>
