@@ -4,9 +4,7 @@ import React from "react";
 
 const Courseenrollment = () => {
   const { user } = useUser();
-  console.log(useUser());
 
-  console.log("isLoaded", user);
   return (
     <>
       <div className="p-3 text-center rounded-sm bg-primary ">
