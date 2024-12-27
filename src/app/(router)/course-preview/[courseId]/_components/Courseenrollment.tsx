@@ -3,7 +3,7 @@ import { useUser } from "@clerk/nextjs";
 import React from "react";
 
 const Courseenrollment = () => {
-  const { user, isLoaded } = useUser();
+  const { user } = useUser();
   console.log(useUser());
 
   console.log("isLoaded", user);
