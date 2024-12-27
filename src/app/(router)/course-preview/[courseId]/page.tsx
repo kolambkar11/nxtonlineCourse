@@ -32,6 +32,7 @@ interface ICourse {
 }
 
 interface ICourseInfo {
+  free: boolean;
   courseLists: ICourse[];
 }
 
@@ -96,7 +97,7 @@ const Coursepreview: React.FC<CoursePreviewProps> = (props) => {
       </div>
       {/* course content */}
       <div>
-        <Courseenrollment />
+        <Courseenrollment courseInfo={courseInfo} />
         <Coursecontentsection courseInfo={courseInfo} />
       </div>
     </div>

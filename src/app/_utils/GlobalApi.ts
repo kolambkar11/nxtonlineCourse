@@ -92,4 +92,31 @@ slug
   return result;
 };
 
-export default { getAllCourseList, getSideBanner, getCourseByID };
+const enrollToCourse = async (courseId: string, email: string | undefined) => {
+  const query =
+    gql`
+    mutation myMutation{
+      createUserEnrollCourse(data:{courseId:"` +
+    courseId +
+    `",userEmail:"` +
+    email +
+    `",courseList:{connect:{slug:"` +
+    courseId +
+    `"}}}
+      ){
+        id
+      }
+    }
+  `;
+  console.log(query);
+  const result = await request(MASTER_URL, query);
+
+  return result;
+};
+
+export default {
+  getAllCourseList,
+  getSideBanner,
+  getCourseByID,
+  enrollToCourse,
+};

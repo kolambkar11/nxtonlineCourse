@@ -31,7 +31,6 @@ const Coursevideodescription: React.FC<CourseVideoDescriptionProps> = (
   props
 ) => {
   const datas = props.courseInfo.courseLists[0];
-
   return (
     datas && (
       <>
