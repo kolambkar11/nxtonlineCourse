@@ -1,4 +1,5 @@
 import { SignIn } from "@clerk/nextjs";
+import Image from "next/image";
 
 export default function Page() {
   return (
@@ -6,7 +7,7 @@ export default function Page() {
       <section className="bg-white">
         <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
           <aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
-            <img
+            <Image
               alt=""
               src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               className="absolute inset-0 h-full w-full object-cover"

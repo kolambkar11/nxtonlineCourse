@@ -108,9 +108,8 @@ const enrollToCourse = async (courseId: string, email: string | undefined) => {
       }
     }
   `;
-  console.log(query);
-  const result = await request(MASTER_URL, query);
 
+  const result = await request(MASTER_URL, query);
   return result;
 };
 

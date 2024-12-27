@@ -13,7 +13,7 @@ const Page = () => {
     } else if (isLoaded) {
       router.push("/courses");
     }
-  }, [user, isLoaded]); // Added isLoaded to the dependency array
+  }, [user, isLoaded, router]); // Added isLoaded to the dependency array
 
   return (
     <div>
