@@ -27,10 +27,10 @@ interface CourseVideoDescriptionProps {
   courseInfo: ICourseInfo;
 }
 
-const Coursevideodescription: React.FC<CourseVideoDescriptionProps> = (
-  props
-) => {
-  const datas = props.courseInfo.courseLists[0];
+const Coursevideodescription: React.FC<CourseVideoDescriptionProps> = ({
+  courseInfo,
+}) => {
+  const datas = courseInfo.courseLists[0];
   return (
     datas && (
       <>

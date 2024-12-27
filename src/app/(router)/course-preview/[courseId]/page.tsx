@@ -39,6 +39,8 @@ interface ICourseInfo {
 
 const Coursepreview: React.FC<CoursePreviewProps> = (props) => {
   const [courseInfo, setCourseInfo] = useState<ICourseInfo | null>(null);
+  console.log(courseInfo);
+
   const [courseId, setCourseId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -65,7 +67,6 @@ const Coursepreview: React.FC<CoursePreviewProps> = (props) => {
       .then((resp) => {
         const result = resp as ICourseInfo; // Type assertion
         setCourseInfo(result);
-        console.log(result);
       }) // No explicit type assertion needed if GlobalApi.getCourseByID is correctly typed
       .catch((error) => console.error("Error fetching course info:", error));
   };
