@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Coursevideodescription from "./_components/Coursevideodescription";
+// import Coursevideodescription from "./_components/Coursevideodescription";
 import GlobalApi from "@/app/_utils/GlobalApi";
 import Courseenrollment from "./_components/Courseenrollment";
 import Coursecontentsection from "./_components/Coursecontentsection";
