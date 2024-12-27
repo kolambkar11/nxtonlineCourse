@@ -58,7 +58,10 @@ const Coursepreview: React.FC<CoursePreviewProps> = (props) => {
 
   const getCourseInforById = (id: string) => {
     GlobalApi.getCourseByID(id)
-      .then((resp) => setCourseInfo(resp)) // No explicit type assertion needed if GlobalApi.getCourseByID is correctly typed
+      .then((resp) => {
+        const result = resp as ICourseInfo; // Type assertion
+        setCourseInfo(result);
+      }) // No explicit type assertion needed if GlobalApi.getCourseByID is correctly typed
       .catch((error) => console.error("Error fetching course info:", error));
   };
 
