@@ -1,4 +1,3 @@
-import GlobalApi from "@/app/_utils/GlobalApi";
 import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
@@ -30,7 +29,7 @@ const Courseenrollment: React.FC<CourseContentSectionProps> = ({
   courseInfo,
 }) => {
   const { user } = useUser();
-  const email = user?.primaryEmailAddress?.emailAddress;
+  // const email = user?.primaryEmailAddress?.emailAddress;
   const membership = true;
 
   // const onEnrollToCourse = () => {
