@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import GlobalApi from "@/app/_utils/GlobalApi";
 import Courseenrollment from "./_components/Courseenrollment";
 import Coursecontentsection from "./_components/Coursecontentsection";
-import Coursevideodescription from "./_components/Coursevideodescription";
+// import Coursevideodescription from "./_components/Coursevideodescription";
 // Course Params Interface
 interface CourseParams {
   courseId: string;
