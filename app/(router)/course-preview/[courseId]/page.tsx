@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-// import Coursevideodescription from "./_components/Coursevideodescription";
+import Coursevideodescription from "./_components/Coursevideodescription";
 import GlobalApi from "../../../_utils/GlobalApi";
 import Courseenrollment from "./_components/Courseenrollment";
 import Coursecontentsection from "./_components/Coursecontentsection";
@@ -95,7 +95,7 @@ const Coursepreview: React.FC<CoursePreviewProps> = (props) => {
     <div className="grid grid-cols-1 md:grid-cols-3 p-5 gap-3">
       {/* title, video, description */}
       <div className="col-span-2 bg-white p-3 rounded-xl">
-        {/* <Coursevideodescription courseInfo={courseInfo} /> */}
+        <Coursevideodescription courseInfo={courseInfo} />
       </div>
       {/* course content */}
       <div>
