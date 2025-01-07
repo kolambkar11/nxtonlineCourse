@@ -1,12 +1,14 @@
-import GlobalApi from "@/app/_utils/GlobalApi";
+// import GlobalApi from "@/app/_utils/GlobalApi";
+import GlobalApi from "../../_utils/GlobalApi";
 import React, { useEffect, useState } from "react";
+
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from "../../../components/ui/select";
 import Courseitem from "./Courseitem";
 import Link from "next/link";
 
