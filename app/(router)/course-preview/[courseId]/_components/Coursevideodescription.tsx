@@ -1,4 +1,4 @@
-import Videoplayer from "@/app/(router)/_components/Videoplayer";
+import Videoplayer from "../../../_components/Videoplayer";
 import React from "react";
 import Markdown from "react-markdown";
 
